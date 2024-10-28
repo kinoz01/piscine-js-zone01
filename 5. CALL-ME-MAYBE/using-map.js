@@ -1,0 +1,5 @@
+const citiesOnly = objArr => objArr.map(obj => obj.city)
+const upperCasingStates = strArr => strArr.map(str => str.split(" ").map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(" "))
+const fahrenheitToCelsius = fTemps => fTemps.map(T => Math.floor((parseInt(T) - 32) * 5 / 9) + "°C")
+const trimTemp = objArr => objArr.map(obj => ({ ...obj, temperature: obj.temperature.replace(/\s+/g, '')}))
+const tempForecasts = objArr => objArr.map(obj => `${fahrenheitToCelsius([obj.temperature.replace(/s+/g, '')]).join("")}elsius in ${obj.city}, ${upperCasingStates([obj.state]).join("")}`)
