@@ -1,15 +1,9 @@
 const map = (arr, func) => {
-    let result = []
-    for (let i = 0; i < arr.length; i++) {
-        result.push(func(arr[i], i, arr))
+    let res  = []
+    for (let i=0; i < arr.length; i++) {
+        res.push(func(arr[i], i, arr))
     }
-    return result
+    return res
 }
 
-const flatMap = (arr, func) => {
-    let result = []
-    for (let i = 0; i < arr.length; i++) {
-        result.push(func(arr[i], i, arr))
-    }
-    return [...result]
-}
+const flatMap = (arr, func) => [].concat(...map(arr, func))

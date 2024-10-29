@@ -12,10 +12,11 @@ function currifyy(func) {
     }
 }
 
-// const add = (a, b, c) => a + b + c;
-// const curriedAdd = currify(add);
-// const curried = currify(curriedAdd(1)) // return of the first call of currify
+const add = (a, b, c) => a + b + c;
+const curriedAdd = currify(add);
+const curried = currify(curriedAdd(1)) // return of the first call of currify
 
-// console.log(curried(2)(3)); // Output: 6
-// console.log(curriedAdd(1, 2)(3)); // Output: 6
-// console.log(curriedAdd(1)(2, 3)); // Output: 6
+console.log(curried(2)(3)); // Output: 6
+console.log(curriedAdd(1, 2)(3)); // Output: 6
+console.log(curriedAdd(1)(2, 3)); // Output: 6
+console.log(currify(add)(4)(5)(6));
