@@ -11,7 +11,7 @@ const initialize = () => {
 
 const getArchitects = () => (initialize(), [architects, nonArchitects])
 const getClassical = () => (initialize(), [classical, nonClassical])
-const getActive = () => [active, nonActive]
-const getBonannoPisano = () => [document.getElementById(""), active]
+const getActive = () => (initialize(), [active, nonActive])
+const getBonannoPisano = () => [document.getElementById('BonannoPisano'), getActive()[0]]
 
 export { getArchitects, getClassical, getActive, getBonannoPisano }
